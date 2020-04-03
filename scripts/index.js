@@ -7,11 +7,29 @@ Uncaught SyntaxError: Cannot use import statement outside a module
 Por lo que debemos agregar en el HTML que se utiliza como modulo
 <script type="module" src="scripts/index.js"></script>
 */
-const html = new Curso("HTML desde cero","https://cdn.svgporn.com/logos/html-5.svg",10)
 
-const elemCurso = document.getElementById("curso")
-elemCurso.innerHTML = `
-    <img src="${html.getPoster()}" style="max-width: 120px; heigth: 120px" />
-    <h3>${html.getNombre()}</h3>
-    <span>Cantidad de clases: ${html.getClases()}</span>
+//Instanciamos objetos de la clase Curso
+const html = new Curso("HTML desde cero","https://blog.megacursos.com/wp-content/uploads/2018/04/HTML5-2-710x434.jpg",10)
+const css = new Curso("CSS desde cero","https://unioninformatica.org/wp-content/uploads/2016/11/css-3-educacion-comunidad-curso.jpg",8)
+
+
+const elemCurso = document.getElementById("cursos")
+
+/*
+* Imprime un curso en el DOM
+* Recibe un objeto tipo Curso
+*/
+function mostrarCurso(curso) {
+    const hijo = document.createElement("div")
+    hijo.innerHTML = `
+    <img src="${curso.getPoster()}" style="height:150px"/>
+    <h3>${curso.getNombre()}</h3>
+    <span>Cantidad de clases: ${curso.getClases()}</span> 
+    <br><br><br>
 `
+elemCurso.appendChild(hijo)
+}
+
+//Invocaciones a la función mostra curso.
+mostrarCurso(html)
+mostrarCurso(css)
