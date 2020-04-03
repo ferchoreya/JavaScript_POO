@@ -30,4 +30,12 @@ export default class Curso {
     getClases() {
         return this.clases
     }
+
+    setInscritos(inscritos) {
+        this.inscritos = inscritos
+    }
+
+    getInscritos() {
+        return this.inscritos
+    }
 }

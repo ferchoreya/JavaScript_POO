@@ -7,5 +7,11 @@ Uncaught SyntaxError: Cannot use import statement outside a module
 Por lo que debemos agregar en el HTML que se utiliza como modulo
 <script type="module" src="scripts/index.js"></script>
 */
-const html = new Curso("HTML desde cero","http://bancodeimagenes/tec/html5.png",10)
-console.log(html)
+const html = new Curso("HTML desde cero","https://cdn.svgporn.com/logos/html-5.svg",10)
+
+const elemCurso = document.getElementById("curso")
+elemCurso.innerHTML = `
+    <img src="${html.getPoster()}" style="max-width: 120px; heigth: 120px" />
+    <h3>${html.getNombre()}</h3>
+    <span>Cantidad de clases: ${html.getClases()}</span>
+`
