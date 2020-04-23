@@ -1,15 +1,49 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>POO JS</title>
-    <link rel="stylesheet" href="css/estilosED.css">
-</head>
-<body>
-    <div class="ed-grid m-grid-4 s-grid-2" id="cursos">
-
+    <link rel="stylesheet" href="css/estilosED.css" />
+  </head>
+  <body>
+    <!--Referencia de  los estilos: https://ux.ed.team/ -->
+    <div class="ed-grid">
+      <h1>Cursos Codellege</h1>
+      <form id="formCursos">
+        <div class="ed-grid m-grid-4">
+          <div class="form-item">
+            <label>
+              Nombre:
+              <input type="text" name="nombreCurso" required />
+            </label>
+          </div>
+          <div class="form-item">
+            <label>
+              Imagen:
+              <input type="text" name="imagenCurso" />
+            </label>
+          </div>
+          <div class="form-item">
+            <label>
+              Número Clases:
+              <input type="number" min="1" name="numeroClases" />
+            </label>
+          </div>
+          <div class="form-item m-py-3">
+            <label>
+              <input
+                class="button"
+                type="submit"
+                name="nombreCurso"
+                value="Crear curso"
+              />
+            </label>
+          </div>
+        </div>
+      </form>
     </div>
+    <div class="ed-grid m-grid-4 s-grid-2 row-gap" id="cursos"></div>
     <script type="module" src="scripts/index.js"></script>
-</body>
+  </body>
 </html>
